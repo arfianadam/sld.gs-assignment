@@ -22,7 +22,25 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        loaders: [
+          {
+            loader: 'style-loader'
+          }, {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 2,
+              sourceMap: true
+            }
+          }, {
+            loader: 'sass-loader',
+            options: {
+              outputStyle: 'expanded',
+              sourceMap: true,
+              sourceMapContents: true
+            }
+          }
+        ]
       },
       {
         test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
@@ -31,17 +49,28 @@ module.exports = {
           limit: 10240,
           mimetype: 'application/font-woff'
         }
-      }, {
+      },
+      {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader',
         options: {
           limit: 10240,
           mimetype: 'application/octet-stream'
         }
-      }, {
+      },
+      {
+        test: /\.otf?(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+          mimetype: 'application/font-otf'
+        }
+      },
+      {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader'
-      }, {
+      },
+      {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader',
         options: {
