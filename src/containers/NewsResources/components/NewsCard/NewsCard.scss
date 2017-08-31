@@ -25,4 +25,8 @@
     font-size: .8em;
     text-transform: uppercase;
   }
+
+  @media (max-width: 768px) {
+    margin-bottom: 45px;
+  }
 }
