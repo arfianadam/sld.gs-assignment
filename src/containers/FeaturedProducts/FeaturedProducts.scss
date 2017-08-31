@@ -1,0 +1,47 @@
+// @import "~slick-carousel/slick/slick.css";
+// @import "~slick-carousel/slick/slick-theme.css";
+
+:global(.slick-next:before) {
+  color: #3e3e3e;
+  opacity: 1;
+}
+:global(.slick-prev:before) {
+  color: #3e3e3e;
+  opacity: 1;
+}
+
+.FeaturedProducts {
+  .shopButton {
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 360px;
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+    border: none;
+    background: #d1edd9;
+  }
+}
+
+.slickButton {
+  top: 39%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  cursor: pointer;
+  color: #3e3e3e;
+  border: none;
+  outline: 0;
+  background: 0 0;
+  position: absolute;
+  padding: 0;
+  font-size: 48px;
+}
+
+.prev {
+  left: -25px;
+}
+
+.next {
+  right: -25px;
+}

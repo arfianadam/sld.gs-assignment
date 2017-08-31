@@ -6,6 +6,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'bootstrap-loader',
+    'font-awesome-sass-loader',
     './src/index.js'
   ],
   output: {
@@ -21,7 +22,12 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        test: /slick-carousel(.+)?\.css$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.s?css$/,
+        exclude: /slick-carousel(.+)?\.css$/,
         loaders: [
           {
             loader: 'style-loader'
@@ -29,7 +35,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              importLoaders: 2,
+              importLoaders: 1,
               sourceMap: true
             }
           }, {
@@ -77,7 +83,24 @@ module.exports = {
           limit: 10240,
           mimetype: 'image/svg+xml'
         }
+      },
+      {
+        test: /\.(jpe?g|gif)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240
+        }
       }
+    ]
+  },
+  resolve: {
+    modules: [
+      'src',
+      'node_modules'
+    ],
+    extensions: [
+      '.json',
+      '.js'
     ]
   },
   plugins: [
