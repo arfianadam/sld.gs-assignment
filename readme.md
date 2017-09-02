@@ -1,7 +1,7 @@
 ## Running the site
 Install the dependencies
 ```
-npm run install
+npm install
 ```
 Run the dev server
 ```
